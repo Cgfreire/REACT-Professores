@@ -1,5 +1,5 @@
 import { AppRouter } from "./routes"
-import { GlobalStyles } from './styles/global'
+import { GlobalStyles } from './styles/global/styles.jsx'
 
 export const App = () => {
   return (
