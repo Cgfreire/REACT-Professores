@@ -3,13 +3,16 @@ import { FaPen, FaTrash, FaTools } from "react-icons/fa";
 
 export const TableContainer = styled.div`
   width: 90%;
-  background: #a393eb;
+  background: rgba(163, 147, 235, 0.37);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(163, 147, 235, 0.19);
   padding: 5rem;
-  border-radius: 1rem;
-  box-shadow: 0rem 0rem 2rem 0.1rem #dddddd;
   position: relative;
   overflow-x: auto;
-  min-height: 100vh;
+  height: 100%;
 `;
 
 export const Table = styled.table`
@@ -24,7 +27,7 @@ export const Thead = styled.thead`
 
 export const Th = styled.th`
   font-size: clamp(1.4rem, 1.6rem, 2.2rem);
-  background: #002D62;
+  background: #0092ca;
   color: #e6e6e6;
 `;
 export const Tr = styled.tr`

@@ -29,5 +29,4 @@ export const LicenseContainer = styled.div`
 
 export const LicenseText = styled.h3`
   text-align: center;
-  color: gray;
 `;

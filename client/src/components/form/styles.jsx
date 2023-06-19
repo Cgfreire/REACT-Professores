@@ -2,13 +2,16 @@ import styled from 'styled-components';
 
 export const FormContainer = styled.div`
     width: 90%;
-    background:  #a393eb;
+    background: rgba(163, 147, 235, 0.37);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(163, 147, 235, 0.19);
     padding: 5rem;
-    border-radius: 1rem;
-    box-shadow: 0rem 0rem 2rem .1rem #dddddd;
     position: relative;
     margin-bottom: 3rem;
-     @media only screen and (max-width: 400px) {padding: 0; padding: 2}
+    @media only screen and (max-width: 400px) {padding: 0; padding: 2}
 `;
 export const Form = styled.form`
  width: 100%;

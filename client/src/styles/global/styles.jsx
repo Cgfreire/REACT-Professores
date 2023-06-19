@@ -22,9 +22,12 @@ export const GlobalStyles = createGlobalStyle`
     }
 
     body{
-        width: 100%;
+        background-image: url("https://assets.hongkiat.com/uploads/beautiful-minimalist-desktop-wallpapers/4k/original/01.jpg?3 ");
+        background-repeat: no-repeat;
+        background-size:100%;
+        position: relative;
         height: 100vh;
-        background: #dbd8e3;
+        width: 100vw;
         font-family: 'Poppins', 'Raleway', sans-serif;
     }
 `;
