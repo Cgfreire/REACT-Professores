@@ -20,17 +20,17 @@ export const TableComponent = () => {
   const [editedData, setEditedData] = useState({});
 
   const getProfessores = () => {
-    const listadeProfessores =
+    const listaDeProfessores =
       JSON.parse(localStorage.getItem("professores")) || [];
-    setTableData(listadeProfessores);
+    setTableData(listaDeProfessores);
   };
 
   useEffect(() => {
     getProfessores();
   }, []);
 
-  const handleEdit = (professorid) => {
-    setEditingId(professorid);
+  const handleEdit = (professorId) => {
+    setEditingId(professorId);
   };
 
   const handleCancelEdit = () => {
@@ -38,23 +38,23 @@ export const TableComponent = () => {
     setEditedData({});
   };
 
-  const handleSaveEdit = (professorid) => {
-    const professoresEditado = tableData.find(
-      (professor) => professor.id === professorid
+  const handleSaveEdit = (professorId) => {
+    const professoreEditado = tableData.find(
+      (professor) => professor.id === professorId
     );
 
-    professoresEditado.nome =
-      editedData[professorid]?.nome !== undefined
-        ? editedData[professorid]?.nome
-        : professoresEditado.nome;
-    professoresEditado.matricula =
-      editedData[professorid]?.matricula !== undefined
-        ? editedData[professorid]?.matricula
-        : professoresEditado.matricula;
-    professoresEditado.materia =
-      editedData[professorid]?.materia !== undefined
-        ? editedData[professorid]?.materia
-        : professoresEditado.materia;
+    professoreEditado.nome =
+      editedData[professorId]?.nome !== undefined
+        ? editedData[professorId]?.nome
+        : professoreEditado.nome;
+    professoreEditado.matricula =
+      editedData[professorId]?.matricula !== undefined
+        ? editedData[professorId]?.matricula
+        : professoreEditado.matricula;
+    professoreEditado.materia =
+      editedData[professorId]?.materia !== undefined
+        ? editedData[professorId]?.materia
+        : professoreEditado.materia;
     localStorage.setItem("professores", JSON.stringify(tableData));
     setEditingId(null);
     setEditedData({});
@@ -62,24 +62,24 @@ export const TableComponent = () => {
 
   const handleRemove = (event) => {
     const trElement = event.target.closest("tr");
-    const professorid = trElement.getAttribute("data-id");
+    const professorId = trElement.getAttribute("data-id");
     trElement.remove();
-    const listadeProfessores =
+    const listaDeProfessores =
       JSON.parse(localStorage.getItem("professores")) || [];
-    const updatedlistadeProfessores = listadeProfessores.filter(
-      (professor) => professor.id !== professorid
+    const updatedlistaDeProfessores = listaDeProfessores.filter(
+      (professor) => professor.id !== professorId
     );
     localStorage.setItem(
       "professores",
-      JSON.stringify(updatedlistadeProfessores)
+      JSON.stringify(updatedlistaDeProfessores)
     );
   };
 
-  const handleFieldChange = (professorid, field, value) => {
+  const handleFieldChange = (professorId, field, value) => {
     setEditedData((prevData) => ({
       ...prevData,
-      [professorid]: {
-        ...prevData[professorid],
+      [professorId]: {
+        ...prevData[professorId],
         [field]: value === "" ? null : value,
       },
     }));
