@@ -50,10 +50,6 @@ export const Td = styled.td`
     outline: none;
     background: none;
   }
-
-  :first-child {
-    max-width: 2rem;
-  }
   svg {
     cursor: pointer;
     font-size: 1.5rem;

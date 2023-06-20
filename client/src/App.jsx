@@ -9,3 +9,8 @@ export const App = () => {
     </>
   );
 }
+
+/*
+cd client
+npm run dev
+ */
